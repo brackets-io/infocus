@@ -28,9 +28,17 @@
 }
 
 #focus-play-cafe {
-  background: url('play.png');
+  background: url('cafe.png');
   }
 
 #focus-play-garden {
-  background: url('p1.png');
+  background: url('garden.png');
+  }
+
+#focus-play-fire {
+  background: url('fire.png');
+  }
+
+#focus-play-night {
+  background: url('night.png');
   }

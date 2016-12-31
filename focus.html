@@ -17,6 +17,8 @@
       <button id="focus-play-fire" class="play" title="Fire"></button>
       <button id="focus-play-night" class="play" title="Summer night"></button>
 
+      <button id="mutebtn" onclick="mute()" title="Mute">Mute</button>
+      <input id="volumeslider" type="range" min="0" max="100" value="100" step="1">
     </div>
   </div>
 </div>
@@ -60,7 +62,21 @@
     }
   }
   
-  
+  var mutebtn;
+
+  function mute(){
+	if(cafeSound.muted){
+		cafeSound.muted = false;
+		mutebtn.innerHTML = "Mute";
+	}
+    else {
+		cafeSound.muted = true;
+		mutebtn.innerHTML = "Unmute";
+	}
+}
+function setvolume(){
+	cafeSound.volume = volumeslider.value / 100;
+}
   
   
   

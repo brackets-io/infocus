@@ -42,3 +42,7 @@
 #focus-play-night {
   background: url('night.png');
   }
+
+#focus-mute {
+  background: url('vol-unmute.png');
+}

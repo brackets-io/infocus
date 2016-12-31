@@ -1,0 +1,29 @@
+focus
+extension for brackets
+inspired by noisli
+
+sounds to be included
+- garden
+- fire
+- cafe
+- summer night
+- maybe: cityscape, sea, river...
+
+some programming outlines
+
+- [done] create the simple frame of the app -- bottom panel:
+    incl.:
+      main js - JS extension scaffolding
+      stylesheet
+      html structure
+        title
+        close button
+
+- [done] get one audio/button pair working
+
+- make the sounds loaded by relative path (important)
+- move the inline scripts into separated JS file
+
+other things
+
+- convert the sounds

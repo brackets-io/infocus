@@ -1,18 +1,30 @@
 @charset "UTF-8";
 
 .bottom-panel {}
+
 .focus-panel {}
+
 #focus-panel {}
 
+.focus-contents {
+  padding: 10px;
+}
+
 #focus-player button {
-    height: 40px;
-    width: 40px;
-    border: none;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    float:left;
-    outline:none;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  float: left;
+
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  outline: none;
+}
+
+.pause {
+  background: grey;
 }
 
 #focus-play-cafe {

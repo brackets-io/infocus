@@ -15,9 +15,10 @@
     outline:none;
 }
 
-.play {
+#focus-play-cafe {
   background: url('play.png');
   }
-.pause {
-  background: url('pause.png');
+
+#focus-play-garden {
+  background: url('p1.png');
   }

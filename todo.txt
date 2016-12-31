@@ -23,7 +23,37 @@ some programming outlines
 
 - make the sounds loaded by relative path (important)
 - move the inline scripts into separated JS file
+- add volume control
 
 other things
 
 - convert the sounds
+
+brainstorming possible name ideas for the project
+
+GetFocus
+LetsFocus
+PleaseFocus
+FocusPlease
+FocusPLS
+
+BrainFocus
+
++ InFocus   Infocus   Brackets InFocus
++ InFlow    Inflow    Brackets InFlow
+iFocus
+iFlow
+Flowcus
+
+brain
+zone
+alpha
+alfa
+
+concentrator
+concentrate
+concentr8
+
+mental focus
+fokus
+focuz

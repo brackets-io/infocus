@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+.bottom-panel {}
+.focus-panel {}
+#focus-panel {}
+
+
+#audioplayer{
+  border: 1px solid red;
+}
+
+#btn-play{
+    height: 40px;
+    width: 40px;
+    border: none;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    float:left;
+    outline:none;
+}
+
+#audioplayer #btn-play:hover {}
+
+.play {
+  background: url('play.png');
+  }
+.pause {
+  background: url('pause.png');
+  }

@@ -1,0 +1,35 @@
+<div class="bottom-panel focus-panel" id="focus-panel" style="max-height:75px;">
+  <div class="toolbar simple-toolbar-layout">
+    <div class="title">FocusTest</div>
+    <a href="#" class="close">×</a>
+  </div>
+  <div>
+    <audio id="music">
+      <source src="C:\Users\Judy\AppData\Roaming\Brackets\extensions\user\abakos.focus\coffee.ogg">
+    </audio>
+    <div id="audioplayer">
+      <button id="btn-play" class="play" onclick="play()"></button>
+    </div>
+  </div>
+</div>
+
+<script>
+  var music = document.getElementById('music'); // id for audio element
+  var btnPlay = document.getElementById('btn-play'); // play button
+  //Play and Pause
+  function play() {
+    // start music
+    if (music.paused) {
+      music.play();
+      // remove play, add pause
+      btnPlay.className = "";
+      btnPlay.className = "pause";
+    }
+    else { // pause music
+      music.pause();
+      // remove pause, add play
+      btnPlay.className = "";
+      btnPlay.className = "play";
+    }
+  }
+</script>

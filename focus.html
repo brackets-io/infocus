@@ -4,32 +4,33 @@
     <a href="#" class="close">×</a>
   </div>
   <div>
-    <audio id="music">
+    <audio id="focus-sound-cafe">
       <source src="C:\Users\Judy\AppData\Roaming\Brackets\extensions\user\abakos.focus\coffee.ogg">
     </audio>
-    <div id="audioplayer">
-      <button id="btn-play" class="play" onclick="play()"></button>
+    <div id="focus-player">
+      <button id="focus-play-cafe" class="play" onclick="playCafe()"></button>
     </div>
   </div>
 </div>
 
 <script>
-  var music = document.getElementById('music'); // id for audio element
-  var btnPlay = document.getElementById('btn-play'); // play button
+  var cafeSound = document.getElementById('focus-sound-cafe'); // id for audio element
+  var cafePlayBtn = document.getElementById('focus-play-cafe'); // play button
   //Play and Pause
-  function play() {
+  function playCafe() {
     // start music
-    if (music.paused) {
-      music.play();
+    if (cafeSound.paused) {
+      cafeSound.play();
       // remove play, add pause
-      btnPlay.className = "";
-      btnPlay.className = "pause";
+      cafePlayBtn.className = "";
+      cafePlayBtn.className = "pause";
     }
     else { // pause music
-      music.pause();
+      cafeSound.pause();
       // remove pause, add play
-      btnPlay.className = "";
-      btnPlay.className = "play";
+      cafePlayBtn.className = "";
+      cafePlayBtn.className = "play";
     }
   }
+
 </script>

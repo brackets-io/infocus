@@ -1,17 +1,17 @@
 @charset "UTF-8";
 
-/* Focus container. Does not include toolbar */
-.focus-contents {
+/* InFocus container. Does not include toolbar */
+.infocus-contents {
   margin: auto;
   padding: 5px;
   text-align: center;
   }
 
 /* Channels = Sounds */
-.focus-player-channels {
+.infocus-player-channels {
   display: inline-block;
   padding: 5px 10px;
-  margin-right: 10px;
+  margin-right: 5px;
 
   border: 1px solid rgba(52,52,52,1);
   border-radius: 3px;
@@ -20,10 +20,10 @@
     0 0 2px rgba(28,28,30,0.75) inset;
   }
 
-#focus-player button {
+#infocus-player button {
   width: 20px;
   height: 20px;
-  
+
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -31,13 +31,13 @@
   outline: none;
   }
 
-.focus-player-channels button:not(:last-child),
-.focus-player-controls button:not(:last-child) {
+.infocus-player-channels button:not(:last-child),
+.infocus-player-controls button:not(:last-child) {
   margin-right: 5px;
   }
 
 /* Cafe sounds */
-#focus-play-cafe:hover {
+#infocus-play-cafe:hover {
   background: url('cafe-hover.png');
   background-size: 100%;
   }
@@ -45,14 +45,14 @@
   .cafe-pause   { background: url('cafe-off.png');    }
 
 /* Garden sounds */
-#focus-play-garden:hover {
+#infocus-play-garden:hover {
   background: url('garden-hover.png');
   background-size: 100%;
   }
   .garden-play  { background: url('garden-on.png');   }
   .garden-pause { background: url('garden-off.png');  }
 
-.focus-player-controls {
+.infocus-player-controls {
   display: inline-block;
   padding: 5px 10px;
 
@@ -65,7 +65,7 @@
   }
 
 /* Mute button */
-#focus-mute:hover {
+#infocus-mute:hover {
   background: url('vol-hover.png');
   background-size: 100%;
   }
@@ -73,16 +73,16 @@
   .unmute-sound { background: url('vol-unmute.png');  }
 
 /* Volume slider */
-#focus-volume-slider {
+#infocus-volume-slider {
   -webkit-appearance: none;
   width: 100px;
   cursor: w-resize;
   }
 
-#focus-volume-slider:focus { outline: none; }
+#infocus-volume-slider:focus { outline: none; }
 
 /* Volume slider track */
-#focus-volume-slider::-webkit-slider-runnable-track {
+#infocus-volume-slider::-webkit-slider-runnable-track {
   width: 100%;
   height: 10px;
 
@@ -95,7 +95,7 @@
 }
 
 /* Volume slider thumb */
-#focus-volume-slider::-webkit-slider-thumb {
+#infocus-volume-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 15px;
   height: 20px;
@@ -110,7 +110,3 @@
     1px 2px 5px rgba(0, 0, 0, 0.5),
     0 0 10px rgba(0,0,0,0.95) inset;
   }
-
-/*#focus-volume-slider::-webkit-slider-thumb:hover {
-  background: rgba(41,171,226,1);
-  }*/

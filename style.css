@@ -1,48 +1,116 @@
 @charset "UTF-8";
 
-.bottom-panel {}
-
-.focus-panel {}
-
-#focus-panel {}
-
+/* Focus container. Does not include toolbar */
 .focus-contents {
-  padding: 10px;
-}
+  margin: auto;
+  padding: 5px;
+  text-align: center;
+  }
+
+/* Channels = Sounds */
+.focus-player-channels {
+  display: inline-block;
+  padding: 5px 10px;
+  margin-right: 10px;
+
+  border: 1px solid rgba(52,52,52,1);
+  border-radius: 3px;
+  box-shadow:
+    0 0 2px rgba(28,28,30,0.75),
+    0 0 2px rgba(28,28,30,0.75) inset;
+  }
 
 #focus-player button {
   width: 20px;
   height: 20px;
-  margin-right: 10px;
-  float: left;
-
+  
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
   border: none;
   outline: none;
+  }
+
+.focus-player-channels button:not(:last-child),
+.focus-player-controls button:not(:last-child) {
+  margin-right: 5px;
+  }
+
+/* Cafe sounds */
+#focus-play-cafe:hover {
+  background: url('cafe-hover.png');
+  background-size: 100%;
+  }
+  .cafe-play    { background: url('cafe-on.png');     }
+  .cafe-pause   { background: url('cafe-off.png');    }
+
+/* Garden sounds */
+#focus-play-garden:hover {
+  background: url('garden-hover.png');
+  background-size: 100%;
+  }
+  .garden-play  { background: url('garden-on.png');   }
+  .garden-pause { background: url('garden-off.png');  }
+
+.focus-player-controls {
+  display: inline-block;
+  padding: 5px 10px;
+
+  background: rgba(28,28,30,1);
+  border: 1px solid rgba(52,52,52,1);
+  border-radius: 3px;
+  box-shadow:
+    0 0 2px rgba(28,28,30,0.75),
+    0 0 2px rgba(0,0,0,0.75) inset;
+  }
+
+/* Mute button */
+#focus-mute:hover {
+  background: url('vol-hover.png');
+  background-size: 100%;
+  }
+  .mute-sound   { background: url('vol-mute.png');    }
+  .unmute-sound { background: url('vol-unmute.png');  }
+
+/* Volume slider */
+#focus-volume-slider {
+  -webkit-appearance: none;
+  width: 100px;
+  cursor: w-resize;
+  }
+
+#focus-volume-slider:focus { outline: none; }
+
+/* Volume slider track */
+#focus-volume-slider::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 10px;
+
+  background: rgba(0,0,0,1);
+  border: 1px solid rgba(0,0,0,1);
+  border-bottom: 1px solid rgba(52,52,52,0.75);
+  box-shadow:
+    0 0 4px rgba(0,0,0,0.5),
+    0 -5px 5px rgba(128,128,128,0.15) inset;
 }
 
-.pause {
-  background: grey;
-}
+/* Volume slider thumb */
+#focus-volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 15px;
+  height: 20px;
+  margin-top: -6px;
 
-#focus-play-cafe {
-  background: url('cafe.png');
+  background: rgba(118,118,118,1);
+  border: 1px solid rgba(52,52,52,1);
+  border-top: 1px solid rgba(72,72,72,1);
+  border-left: 1px solid rgba(72,72,72,1);
+  border-radius: 3px;
+  box-shadow:
+    1px 2px 5px rgba(0, 0, 0, 0.5),
+    0 0 10px rgba(0,0,0,0.95) inset;
   }
 
-#focus-play-garden {
-  background: url('garden.png');
-  }
-
-#focus-play-fire {
-  background: url('fire.png');
-  }
-
-#focus-play-night {
-  background: url('night.png');
-  }
-
-#focus-mute {
-  background: url('vol-unmute.png');
-}
+/*#focus-volume-slider::-webkit-slider-thumb:hover {
+  background: rgba(41,171,226,1);
+  }*/

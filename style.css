@@ -38,19 +38,19 @@
 
 /* Cafe sounds */
 #infocus-play-cafe:hover {
-  background: url('cafe-hover.png');
+  background: url('icons/cafe-hover.png');
   background-size: 100%;
   }
-  .cafe-play    { background: url('cafe-on.png');     }
-  .cafe-pause   { background: url('cafe-off.png');    }
+  .cafe-play    { background: url('icons/cafe-on.png');     }
+  .cafe-pause   { background: url('icons/cafe-off.png');    }
 
 /* Garden sounds */
 #infocus-play-garden:hover {
-  background: url('garden-hover.png');
+  background: url('icons/garden-hover.png');
   background-size: 100%;
   }
-  .garden-play  { background: url('garden-on.png');   }
-  .garden-pause { background: url('garden-off.png');  }
+  .garden-play  { background: url('icons/garden-on.png');   }
+  .garden-pause { background: url('icons/garden-off.png');  }
 
 .infocus-player-controls {
   display: inline-block;
@@ -66,11 +66,11 @@
 
 /* Mute button */
 #infocus-mute:hover {
-  background: url('vol-hover.png');
+  background: url('icons/vol-hover.png');
   background-size: 100%;
   }
-  .mute-sound   { background: url('vol-mute.png');    }
-  .unmute-sound { background: url('vol-unmute.png');  }
+  .mute-sound   { background: url('icons/vol-mute.png');    }
+  .unmute-sound { background: url('icons/vol-unmute.png');  }
 
 /* Volume slider */
 #infocus-volume-slider {

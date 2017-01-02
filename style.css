@@ -52,6 +52,30 @@
   .garden-play  { background: url('icons/garden-on.png');   }
   .garden-pause { background: url('icons/garden-off.png');  }
 
+/* Summer night sounds */
+#infocus-play-night:hover {
+  background: url('icons/night-hover.png');
+  background-size: 100%;
+  }
+  .night-play   { background: url('icons/night-on.png');  }
+  .night-pause  { background: url('icons/night-off.png'); }
+
+/* Burning fire sounds */
+#infocus-play-fire:hover {
+  background: url('icons/fire-hover.png');
+  background-size: 100%;
+  }
+  .fire-play    { background: url('icons/fire-on.png');   }
+  .fire-pause   { background: url('icons/fire-off.png');  }
+
+/* Cityscape sounds */
+#infocus-play-city:hover {
+  background: url('icons/city-hover.png');
+  background-size: 100%;
+  }
+  .city-play    { background: url('icons/city-on.png');   }
+  .city-pause   { background: url('icons/city-off.png');  }
+
 .infocus-player-controls {
   display: inline-block;
   padding: 5px 10px;

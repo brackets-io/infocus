@@ -1,4 +1,4 @@
-focus
+infocus
 extension for brackets
 inspired by noisli
 
@@ -23,7 +23,9 @@ some programming outlines
 
 - make the sounds loaded by relative path (important)
 - move the inline scripts into separated JS file
-- add volume control
+- [done] add volume control
+- [done] create one abstacted function with and argument for calling the sounds instead of having 5 different/separated ones.
+- fix the mute button
 
 other things
 
@@ -31,29 +33,35 @@ other things
 
 brainstorming possible name ideas for the project
 
-GetFocus
-LetsFocus
-PleaseFocus
-FocusPlease
-FocusPLS
 
-BrainFocus
-
-+ InFocus   Infocus   Brackets InFocus
-+ InFlow    Inflow    Brackets InFlow
+Brackets InFocus
+---
+Brackets Focusator
+Brackets InFlow
+Brackets Fookus
+---
 iFocus
 iFlow
-Flowcus
-
 brain
 zone
 alpha
 alfa
-
-concentrator
-concentrate
-concentr8
-
+Alphatron
 mental focus
 fokus
 focuz
+---
+no Brackets Foocus
+no FocusPlease
+no FocusPLS
+no Brackets FooCus
+no GetFocus
+no LetsFocus
+no PleaseFocus
+no BrainFocus
+no Groove
+no Flowcus
+no concentrator
+no concentrate
+no concentr8
+

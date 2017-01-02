@@ -1,94 +1,106 @@
-<div class="bottom-panel focus-panel" id="focus-panel" style="max-height:70px;">
+<div class="bottom-panel focus-panel" id="infocus-panel" style="max-height:75px;">
+
   <div class="toolbar simple-toolbar-layout">
-    <div class="title">FocusTest</div>
+    <div class="title">InFocus</div>
     <a href="#" class="close">×</a>
   </div>
-  <div class="focus-contents">
-    <audio id="focus-sound-cafe" loop>
+
+  <div class="infocus-contents">
+    <audio id="infocus-sound-cafe" loop>
       <source src="C:\Users\Judy\AppData\Roaming\Brackets\extensions\user\abakos.focus\coffee.ogg">
     </audio>
-    <audio id="focus-sound-garden" loop>
+    <audio id="infocus-sound-garden" loop>
       <source src="C:\Users\Judy\AppData\Roaming\Brackets\extensions\user\abakos.focus\garden.wav">
     </audio>
 
-    <div id="focus-player">
-      <button id="focus-play-cafe" class="play" onclick="playCafe()" title="Busy cafe"></button>
-      <button id="focus-play-garden" class="play" onclick="playGarden()" title="Garden sounds"></button>
-      <button id="focus-play-fire" class="play" title="Fire"></button>
-      <button id="focus-play-night" class="play" title="Summer night"></button>
+    <div id="infocus-player">
+      <div class="infocus-player-channels">
+        <button id="infocus-play-cafe" class="cafe-play" onclick="playSound('cafe')" title="Busy cafe"></button>
+        <button id="infocus-play-garden" class="garden-play" onclick="playSound('garden')" title="Garden sounds"></button>
+        <button id="infocus-play-night" class="night-play" onclick="" title="Summer night sounds"></button>
+        <button id="infocus-play-fire" class="fire-play" onclick="" title="Burning fire sounds"></button>
+        <button id="infocus-play-city" class="city-play" onclick="" title="Cityscape sounds"></button>
+      </div>
 
-      <button id="focus-mute" onclick="mute()" title="Mute"></button>
-      <input id="volumeslider" type="range" min="0" max="100" value="100" step="1">
-    </div>
-  </div>
-</div>
+      <div class="infocus-player-controls">
+        <button id="infocus-mute" class="unmute-sound" onclick="mute()" title="Mute button"></button>
+        <input id="infocus-volume-slider" type="range" min="0" max="100" value="100" step="1" onchange="setVolume()">
+      </div>
+
+    </div> <!-- #infocus-player -->
+  </div> <!-- .infocus-contents -->
+</div> <!-- #infocus-panel -->
 
 <script>
-  var cafeSound = document.getElementById('focus-sound-cafe'); // cafe sound audio
-  var cafePlayBtn = document.getElementById('focus-play-cafe'); // play button
-  //Play and Pause
-  function playCafe() {
-    // start music
-    if (cafeSound.paused) {
-      cafeSound.play();
-      // remove play, add pause
-      cafePlayBtn.className = "";
-      cafePlayBtn.className = "pause";
-    }
-    else { // pause music
-      cafeSound.pause();
-      // remove pause, add play
-      cafePlayBtn.className = "";
-      cafePlayBtn.className = "play";
-    }
-  }
-  
-  var gardenSound = document.getElementById('focus-sound-garden'); // garden sound audio
-  var gardenPlayBtn = document.getElementById('focus-play-garden'); // play button
-  //Play and Pause
-  function playGarden() {
-    // start music
-    if (gardenSound.paused) {
-      gardenSound.play();
-      // remove play, add pause
-      gardenPlayBtn.className = "";
-      gardenPlayBtn.className = "pause";
-    }
-    else { // pause music
-      gardenSound.pause();
-      // remove pause, add play
-      gardenPlayBtn.className = "";
-      gardenPlayBtn.className = "play";
-    }
-  }
-  
-  
-  
-  
-  
-  
-  var muteButton = document.getElementById('focus-mute');
-  function mute(){
-	if(cafeSound.muted){
-		cafeSound.muted = false;
-      muteButton.className = "";
-      muteButton.className = "mute";
 
-    }
-    else {
-		cafeSound.muted = true;
-      muteButton.className = "";
-      muteButton.className = "unmute";
+// Set global variables so playSound(), mute(), setVolume() fucntions can
+// access them:
+var channelSound;
+var channelPlayBtn;
 
-    }
+// Function for playing the sounds by passing the sounds' names as arguments
+// eg. playSound('cafe')
+function playSound(channel) {
+
+  channelSound = document.getElementById('infocus-sound-' + channel);
+  channelPlayBtn = document.getElementById('infocus-play-' + channel);
+
+  // Start playing the sounds
+  if (channelSound.paused) {
+    channelSound.play();
+    // Remove *-play CSS class, add *-pause instead
+    channelPlayBtn.className = "";
+    channelPlayBtn.className = channel + "-pause";
+  }
+  else { // Pause the sounds
+    channelSound.pause();
+    // Remove *-pause CSS class, add *-play instead
+    channelPlayBtn.className = "";
+    channelPlayBtn.className = channel + "-play";
+  }
 }
-function setvolume(){
-	cafeSound.volume = volumeslider.value / 100;
+
+// The mute button
+  // Momentarily mute button does not react to anything...
+function mute() {
+
+  var muteButton = document.getElementById('infocus-mute');
+
+  if(channelSound.muted) { // this is strange here...
+    channelSound.muted = false;
+
+    muteButton.className = "";
+    muteButton.className = "unmute-sound";
+  }
+  else {
+    channelSound.muted = true;
+    muteButton.className = "";
+    muteButton.className = "mute-sound";
+  }
 }
-  
-  
-  
-  
- 
-  
+
+// Volume slider
+function setVolume() {
+
+  var volSlider = document.getElementById('infocus-volume-slider');
+  channelSound.volume = volSlider.value / 100;
+
+/*
+Improvement notes:
+
+Add a conditional here that evaluates whether the mute button is switched on.
+If it is then assign the slider's value to 0.
+
+if channelSound.muted = true {
+  volSlider.value = 0;
+}
+
+Add a conditional that checks whether the slider's value is set to 0.
+If it is then change the mute button's icon to the _MUTED_ state icon.
+    muteButton.className = "";
+    muteButton.className = "mute-sound";
+
+*/
+}
+
 </script>

@@ -7,10 +7,10 @@
 
   <div class="infocus-contents">
     <audio id="infocus-sound-cafe" loop>
-      <source src="C:\Users\Judy\AppData\Roaming\Brackets\extensions\user\abakos.focus\coffee.ogg">
+      <source src="C:\Users\Judy\AppData\Roaming\Brackets\extensions\user\abakos.infocus\coffee.ogg">
     </audio>
     <audio id="infocus-sound-garden" loop>
-      <source src="C:\Users\Judy\AppData\Roaming\Brackets\extensions\user\abakos.focus\garden.wav">
+      <source src="C:\Users\Judy\AppData\Roaming\Brackets\extensions\user\abakos.infocus\garden.wav">
     </audio>
 
     <div id="infocus-player">
@@ -33,8 +33,16 @@
 
 <script>
 
-// Set global variables so playSound(), mute(), setVolume() fucntions can
-// access them:
+// This array contains the sounds, soundArray[x].
+// These elements will be used later in the mute() and setVolume() functions.
+// In those functions we need to set the values for each array elements (sounds)
+// in order to have the functions affect them globally, all at once, instead of
+// changing the values (ie. mute them or change the volume) individually.
+var soundsArray = [];
+  soundsArray[0] = document.getElementById('infocus-sound-cafe');
+  soundsArray[1] = document.getElementById('infocus-sound-garden');
+
+// Set global variables so playSound() and mute() functions can access them:
 var channelSound;
 var channelPlayBtn;
 
@@ -52,7 +60,8 @@ function playSound(channel) {
     channelPlayBtn.className = "";
     channelPlayBtn.className = channel + "-pause";
   }
-  else { // Pause the sounds
+  // Pause the sounds
+  else {
     channelSound.pause();
     // Remove *-pause CSS class, add *-play instead
     channelPlayBtn.className = "";
@@ -61,29 +70,33 @@ function playSound(channel) {
 }
 
 // The mute button
-  // Momentarily mute button does not react to anything...
+var muteButton = document.getElementById('infocus-mute');
+
 function mute() {
 
-  var muteButton = document.getElementById('infocus-mute');
-
-  if(channelSound.muted) { // this is strange here...
-    channelSound.muted = false;
+  if (channelSound.muted) {
+    soundsArray[0].muted = false;
+    soundsArray[1].muted = false;
 
     muteButton.className = "";
     muteButton.className = "unmute-sound";
   }
   else {
-    channelSound.muted = true;
+    soundsArray[0].muted = true;
+    soundsArray[1].muted = true;
+
     muteButton.className = "";
     muteButton.className = "mute-sound";
   }
 }
 
 // Volume slider
+var volSlider = document.getElementById('infocus-volume-slider');
+
 function setVolume() {
 
-  var volSlider = document.getElementById('infocus-volume-slider');
-  channelSound.volume = volSlider.value / 100;
+  soundsArray[0].volume = volSlider.value / 100;
+  soundsArray[1].volume = volSlider.value / 100;
 
 /*
 Improvement notes:
@@ -91,15 +104,17 @@ Improvement notes:
 Add a conditional here that evaluates whether the mute button is switched on.
 If it is then assign the slider's value to 0.
 
-if channelSound.muted = true {
+if (channelSound.muted) {
   volSlider.value = 0;
 }
 
 Add a conditional that checks whether the slider's value is set to 0.
 If it is then change the mute button's icon to the _MUTED_ state icon.
-    muteButton.className = "";
-    muteButton.className = "mute-sound";
 
+if (volSlider.value = 0) {
+  muteButton.className = "";
+  muteButton.className = "mute-sound";
+}
 */
 }
 

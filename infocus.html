@@ -42,14 +42,17 @@ var soundsArray = [];
   soundsArray[0] = document.getElementById('infocus-sound-cafe');
   soundsArray[1] = document.getElementById('infocus-sound-garden');
 
-// Set global variables so playSound() and mute() functions can access them:
+// Global variables
 var channelSound;
 var channelPlayBtn;
+var currentVol;
+
+var muteButton  = document.getElementById('infocus-mute');
+var volSlider   = document.getElementById('infocus-volume-slider');
 
 // Function for playing the sounds by passing the sounds' names as arguments
 // eg. playSound('cafe')
 function playSound(channel) {
-
   channelSound = document.getElementById('infocus-sound-' + channel);
   channelPlayBtn = document.getElementById('infocus-play-' + channel);
 
@@ -69,15 +72,41 @@ function playSound(channel) {
   }
 }
 
-// The mute button
-var muteButton = document.getElementById('infocus-mute');
+// Volume slider
+function setVolume() {
+  // Set the volume for all channels.
+  // If it was channelSound.volume here, only the lastly clicked channel's
+  // value would be changing
+  soundsArray[0].volume = volSlider.value / 100;
+  soundsArray[1].volume = volSlider.value / 100;
 
+  // Save the current volume, we'll need it later:
+  currentVol = volSlider.value;
+
+  if (currentVol == 0) {
+    // If the volume is zero, apply the mute icon
+    muteButton.className = "";
+    muteButton.className = "mute-sound";
+  }
+  else {
+    // Otherwise put the volume slider back to its last position,
+    // and apply the "loud" icon
+    volSlider.value = currentVol;
+    muteButton.className = "";
+    muteButton.className = "unmute-sound";
+  }
+}
+
+// Mute button
 function mute() {
-
   if (channelSound.muted) {
     soundsArray[0].muted = false;
     soundsArray[1].muted = false;
 
+    // Back to last position from muted state
+    volSlider.value = currentVol;
+
+    // Apply "loud" icon
     muteButton.className = "";
     muteButton.className = "unmute-sound";
   }
@@ -85,37 +114,13 @@ function mute() {
     soundsArray[0].muted = true;
     soundsArray[1].muted = true;
 
+    // Set volume to zero
+    volSlider.value = 0;
+
+    // Apply mute icon
     muteButton.className = "";
     muteButton.className = "mute-sound";
   }
-}
-
-// Volume slider
-var volSlider = document.getElementById('infocus-volume-slider');
-
-function setVolume() {
-
-  soundsArray[0].volume = volSlider.value / 100;
-  soundsArray[1].volume = volSlider.value / 100;
-
-/*
-Improvement notes:
-
-Add a conditional here that evaluates whether the mute button is switched on.
-If it is then assign the slider's value to 0.
-
-if (channelSound.muted) {
-  volSlider.value = 0;
-}
-
-Add a conditional that checks whether the slider's value is set to 0.
-If it is then change the mute button's icon to the _MUTED_ state icon.
-
-if (volSlider.value = 0) {
-  muteButton.className = "";
-  muteButton.className = "mute-sound";
-}
-*/
 }
 
 </script>

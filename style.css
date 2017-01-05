@@ -76,6 +76,46 @@
   .city-play    { background: url('icons/city-on.png');   }
   .city-pause   { background: url('icons/city-off.png');  }
 
+/* Water sounds */
+#infocus-play-water:hover {
+  background: url('icons/water-hover.png');
+  background-size: 100%;
+  }
+  .water-play    { background: url('icons/water-on.png');   }
+  .water-pause   { background: url('icons/water-off.png');  }
+
+/* Snow falling sounds */
+#infocus-play-snow:hover {
+  background: url('icons/snow-hover.png');
+  background-size: 100%;
+  }
+  .snow-play    { background: url('icons/snow-on.png');   }
+  .snow-pause   { background: url('icons/snow-off.png');  }
+
+/* Dawn sounds */
+#infocus-play-dawn:hover {
+  background: url('icons/dawn-hover.png');
+  background-size: 100%;
+  }
+  .dawn-play    { background: url('icons/dawn-on.png');   }
+  .dawn-pause   { background: url('icons/dawn-off.png');  }
+
+/* Frog pond sounds */
+#infocus-play-frog-pond:hover {
+  background: url('icons/frog-pond-hover.png');
+  background-size: 100%;
+  }
+  .frog-pond-play    { background: url('icons/frog-pond-on.png');   }
+  .frog-pond-pause   { background: url('icons/frog-pond-off.png');  }
+
+/* Wind sounds */
+#infocus-play-wind:hover {
+  background: url('icons/wind-hover.png');
+  background-size: 100%;
+  }
+  .wind-play    { background: url('icons/wind-on.png');   }
+  .wind-pause   { background: url('icons/wind-off.png');  }
+
 .infocus-player-controls {
   display: inline-block;
   padding: 5px 10px;

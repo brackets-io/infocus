@@ -6,8 +6,8 @@
     "version": "0.9.1",
     "author": "Attila Bakos <hello@abakos.info> (abakos.info)",
     "license": "MIT",
+    "keywords": ["focus", "audio", "performance", "productivity"],
     "engines": {
         "brackets": ">=0.24.0"
     }
-    "keywords": ["focus", "audio", "performance", "productivity"],
 }

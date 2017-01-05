@@ -7,19 +7,48 @@
 
   <div class="infocus-contents">
     <audio id="infocus-sound-cafe" loop>
-      <source src="C:\Users\Judy\AppData\Roaming\Brackets\extensions\user\abakos.infocus\coffee.ogg">
+      <source src="C:\Users\Judy\AppData\Roaming\Brackets\extensions\user\abakos.infocus\sounds\infocus-cafe.ogg">
     </audio>
     <audio id="infocus-sound-garden" loop>
-      <source src="C:\Users\Judy\AppData\Roaming\Brackets\extensions\user\abakos.infocus\garden.wav">
+      <source src="C:\Users\Judy\AppData\Roaming\Brackets\extensions\user\abakos.infocus\sounds\infocus-garden.ogg">
+    </audio>
+    <audio id="infocus-sound-night" loop>
+      <source src="C:\Users\Judy\AppData\Roaming\Brackets\extensions\user\abakos.infocus\sounds\infocus-summer-night.ogg">
+    </audio>
+    <audio id="infocus-sound-fire" loop>
+      <source src="C:\Users\Judy\AppData\Roaming\Brackets\extensions\user\abakos.infocus\sounds\infocus-fire.ogg">
+    </audio>
+    <audio id="infocus-sound-city" loop>
+      <source src="C:\Users\Judy\AppData\Roaming\Brackets\extensions\user\abakos.infocus\sounds\infocus-cityscape.ogg">
+    </audio>
+    <audio id="infocus-sound-snow" loop>
+      <source src="C:\Users\Judy\AppData\Roaming\Brackets\extensions\user\abakos.infocus\sounds\infocus-snow.ogg">
+    </audio>
+    <audio id="infocus-sound-water" loop>
+      <source src="C:\Users\Judy\AppData\Roaming\Brackets\extensions\user\abakos.infocus\sounds\infocus-river.ogg">
+    </audio>
+    <audio id="infocus-sound-dawn" loop>
+      <source src="C:\Users\Judy\AppData\Roaming\Brackets\extensions\user\abakos.infocus\sounds\infocus-dawn.ogg">
+    </audio>
+    <audio id="infocus-sound-frog-pond" loop>
+      <source src="C:\Users\Judy\AppData\Roaming\Brackets\extensions\user\abakos.infocus\sounds\infocus-frog-pond.ogg">
+    </audio>
+    <audio id="infocus-sound-wind" loop>
+      <source src="C:\Users\Judy\AppData\Roaming\Brackets\extensions\user\abakos.infocus\sounds\infocus-wind.ogg">
     </audio>
 
     <div id="infocus-player">
       <div class="infocus-player-channels">
+        <button id="infocus-play-dawn" class="dawn-play" onclick="playSound('dawn')" title="Dawn"></button>
+        <button id="infocus-play-garden" class="garden-play" onclick="playSound('garden')" title="Botanical garden"></button>
+        <button id="infocus-play-night" class="night-play" onclick="playSound('night')" title="Summer night"></button>
+        <button id="infocus-play-frog-pond" class="frog-pond-play" onclick="playSound('frog-pond')" title="Frog pond"></button>
+        <button id="infocus-play-wind" class="wind-play" onclick="playSound('wind')" title="Wind"></button>
+        <button id="infocus-play-fire" class="fire-play" onclick="playSound('fire')" title="Burning fire"></button>
+        <button id="infocus-play-water" class="water-play" onclick="playSound('water')" title="Water stream"></button>
+        <button id="infocus-play-snow" class="snow-play" onclick="playSound('snow')" title="Snow falling"></button>
+        <button id="infocus-play-city" class="city-play" onclick="playSound('city')" title="Cityscape"></button>
         <button id="infocus-play-cafe" class="cafe-play" onclick="playSound('cafe')" title="Busy cafe"></button>
-        <button id="infocus-play-garden" class="garden-play" onclick="playSound('garden')" title="Garden sounds"></button>
-        <button id="infocus-play-night" class="night-play" onclick="" title="Summer night sounds"></button>
-        <button id="infocus-play-fire" class="fire-play" onclick="" title="Burning fire sounds"></button>
-        <button id="infocus-play-city" class="city-play" onclick="" title="Cityscape sounds"></button>
       </div>
 
       <div class="infocus-player-controls">
@@ -32,8 +61,7 @@
 </div> <!-- #infocus-panel -->
 
 <script>
-
-// This array contains the sounds, soundArray[x].
+// This array contains the sounds as soundArray[x].
 // These elements will be used later in the mute() and setVolume() functions.
 // In those functions we need to set the values for each array elements (sounds)
 // in order to have the functions affect them globally, all at once, instead of
@@ -41,18 +69,29 @@
 var soundsArray = [];
   soundsArray[0] = document.getElementById('infocus-sound-cafe');
   soundsArray[1] = document.getElementById('infocus-sound-garden');
+  soundsArray[2] = document.getElementById('infocus-sound-night');
+  soundsArray[3] = document.getElementById('infocus-sound-fire');
+  soundsArray[4] = document.getElementById('infocus-sound-city');
+  soundsArray[5] = document.getElementById('infocus-sound-snow');
+  soundsArray[6] = document.getElementById('infocus-sound-water');
+  soundsArray[7] = document.getElementById('infocus-sound-dawn');
+  soundsArray[8] = document.getElementById('infocus-sound-frog-pond');
+  soundsArray[9] = document.getElementById('infocus-sound-wind');
 
-// Global variables
+// Extension variables
 var channelSound;
 var channelPlayBtn;
-var currentVol;
 
+var currentVol;
 var muteButton  = document.getElementById('infocus-mute');
 var volSlider   = document.getElementById('infocus-volume-slider');
 
-// Function for playing the sounds by passing the sounds' names as arguments
-// eg. playSound('cafe')
+/**
+ * Play function
+ */
 function playSound(channel) {
+  // Play the sounds by passing the sounds' names as arguments
+  // eg. playSound('cafe')
   channelSound = document.getElementById('infocus-sound-' + channel);
   channelPlayBtn = document.getElementById('infocus-play-' + channel);
 
@@ -72,36 +111,41 @@ function playSound(channel) {
   }
 }
 
-// Volume slider
+/**
+ * Volume slider
+ */
 function setVolume() {
-  // Set the volume for all channels.
-  // If it was channelSound.volume here, only the lastly clicked channel's
-  // value would be changing
-  soundsArray[0].volume = volSlider.value / 100;
-  soundsArray[1].volume = volSlider.value / 100;
-
-  // Save the current volume, we'll need it later:
+  // Save the current volume, we'll need it later
   currentVol = volSlider.value;
 
+  for (var i = 0; i < soundsArray.length; i++) {
+    // Set the volume for all channels.
+    // If it was channelSound.volume here, only the lastly clicked channel's
+    // value would be changing
+    soundsArray[i].volume = volSlider.value / 100;
+  }
+
   if (currentVol == 0) {
-    // If the volume is zero, apply the mute icon
+    // If the volume is zero, ie. slided all the way left, apply the mute icon
     muteButton.className = "";
     muteButton.className = "mute-sound";
   }
   else {
-    // Otherwise put the volume slider back to its last position,
-    // and apply the "loud" icon
-    volSlider.value = currentVol;
+    // Otherwise apply the "loud" icon
     muteButton.className = "";
     muteButton.className = "unmute-sound";
   }
 }
 
-// Mute button
+/**
+ * Mute function
+ */
 function mute() {
+  // MUTE OFF
   if (channelSound.muted) {
-    soundsArray[0].muted = false;
-    soundsArray[1].muted = false;
+    for (var i = 0; i < soundsArray.length; i++) {
+      soundsArray[i].muted = false;
+    }
 
     // Back to last position from muted state
     volSlider.value = currentVol;
@@ -110,9 +154,11 @@ function mute() {
     muteButton.className = "";
     muteButton.className = "unmute-sound";
   }
+  // MUTE ON
   else {
-    soundsArray[0].muted = true;
-    soundsArray[1].muted = true;
+    for (var i = 0; i < soundsArray.length; i++) {
+      soundsArray[i].muted = true;
+    }
 
     // Set volume to zero
     volSlider.value = 0;
@@ -122,5 +168,4 @@ function mute() {
     muteButton.className = "mute-sound";
   }
 }
-
 </script>

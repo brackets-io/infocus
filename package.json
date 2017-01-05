@@ -1,0 +1,13 @@
+{
+    "name": "abakos.infocus",
+    "title": "InFocus",
+    "description": "",
+    "homepage": "https://github.com/a-bakos/infocus",
+    "version": "0.9.1",
+    "author": "Attila Bakos <hello@abakos.info> (abakos.info)",
+    "license": "MIT",
+    "engines": {
+        "brackets": ">=0.24.0"
+    }
+    "keywords": ["focus", "audio", "performance", "productivity"],
+}

@@ -108,13 +108,13 @@
   .wind-play    { background: url('icons/wind-on.png');  }
   .wind-pause   { background: url('icons/wind-off.png'); }
 
-/* Frog pond sounds */
-#infocus-play-frog-pond:hover {
+/* Pond sounds */
+#infocus-play-pond:hover {
   background: url('icons/frog-pond-hover.png');
   background-size: 100%;
   }
-  .frog-pond-play   { background: url('icons/frog-pond-on.png');  }
-  .frog-pond-pause  { background: url('icons/frog-pond-off.png'); }
+  .pond-play   { background: url('icons/frog-pond-on.png');  }
+  .pond-pause  { background: url('icons/frog-pond-off.png'); }
 
 .infocus-player-controls {
   display: inline-block;

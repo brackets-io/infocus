@@ -10,20 +10,19 @@ define(function(require, exports, module) {
   var COMMAND_ID = "InFocus";
 
   // Get the path of the extension
-  var infocusPath = ExtensionUtils.getModulePath(module);
-  //var cafeup;
-  var sound;
-  var path;
+  var infocusExtPath = ExtensionUtils.getModulePath(module);
 
   var panel;
   var panelHtml = require("text!infocus.html");
 
-  // Function for setting the channels' paths
+  // Function for setting the paths for each channel.
+  // This will go through each audio <source> tags,
+  // and set their src attributes accordingly.
   function getChannelPath() {
     for (var i = 0; i < channelsArray.length; i++) {
-      sound = "sounds/infocus-" + channelsArray[i] + ".ogg";
-      path = infocusPath + sound;
-      document.getElementById('sound-' + channelsArray[i] + '-src').setAttribute("src", path);
+      var soundPath = "sounds/infocus-" + channelsArray[i] + ".ogg";
+      var fullChannelPath = infocusExtPath + soundPath;
+      document.getElementById('sound-' + channelsArray[i] + '-src').setAttribute("src", fullChannelPath);
     }
   }
 
@@ -49,10 +48,6 @@ define(function(require, exports, module) {
     // Create the bottom panel:
     panel = PanelManager.createBottomPanel(INFOCUS_SHOW, $(panelHtml),200);
 
-    //cafeup = document.getElementById('sound-cafe-src').setAttribute("src", cafepath);
-    // ha ide teszek egy valtozot amit a htmlben deklaraltam
-    // es kiiratom az erteket akkor megjelenik no problem.
-    // tehat egy function ben lehet alkalmazni a channelArray elemeit!! 
     getChannelPath();
   });
 

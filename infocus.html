@@ -38,11 +38,11 @@
 
     </div> <!-- #infocus-player -->
   </div> <!-- .infocus-contents -->
-</div> <!-- #infocus-panel -->
+</div>
 
 <script>
 
-// Let's define the names of the channels
+// Define the names of the channels
 var channelsArray = [];
   channelsArray[0] = "cafe";
   channelsArray[1] = "garden";
@@ -55,23 +55,18 @@ var channelsArray = [];
   channelsArray[8] = "pond";
   channelsArray[9] = "wind";
 
-// This array grabs the IDs of the sounds.
+// In this array the IDs of the sounds are stored.
 // These elements will be used later in the mute() and setVolume() functions.
 // In those functions we need to set the values for each array elements (sounds)
 // in order to have the functions affect them globally, all at once, instead of
-// changing the values (ie. mute them or change the volume) individually.
+// changing the values (ie. mute them or change their volume) individually.
 var soundsArray = [];
-  // maybe a function can be written here...
-  soundsArray[0] = document.getElementById('infocus-sound-' + channelsArray[0]);
-  soundsArray[1] = document.getElementById('infocus-sound-' + channelsArray[1]);
-  soundsArray[2] = document.getElementById('infocus-sound-' + channelsArray[2]);
-  soundsArray[3] = document.getElementById('infocus-sound-' + channelsArray[3]);
-  soundsArray[4] = document.getElementById('infocus-sound-' + channelsArray[4]);
-  soundsArray[5] = document.getElementById('infocus-sound-' + channelsArray[5]);
-  soundsArray[6] = document.getElementById('infocus-sound-' + channelsArray[6]);
-  soundsArray[7] = document.getElementById('infocus-sound-' + channelsArray[7]);
-  soundsArray[8] = document.getElementById('infocus-sound-' + channelsArray[8]);
-  soundsArray[9] = document.getElementById('infocus-sound-' + channelsArray[9]);
+// Let's grab and store those IDs with the following loop.
+// Example, Cafe sounds:
+// soundsArray[0] = document.getElementById('infocus-sound-' + channelsArray[0])
+for (var i = 0; i < channelsArray.length; i++) {
+  soundsArray[i] = document.getElementById('infocus-sound-' + channelsArray[i]);
+}
 
 // Extension variables
 var channelSound;

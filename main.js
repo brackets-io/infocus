@@ -1,33 +1,37 @@
-define(function(require, exports, module) {
+define(function (require, exports, module) {
+  "use strict";
 
   var CommandManager    = brackets.getModule("command/CommandManager"),
       Menus             = brackets.getModule("command/Menus"),
-      PanelManager      = brackets.getModule("view/PanelManager"),
+      WorkspaceManager  = brackets.getModule("view/WorkspaceManager"),
       ExtensionUtils    = brackets.getModule("utils/ExtensionUtils"),
       AppInit           = brackets.getModule("utils/AppInit");
 
-  var INFOCUS_SHOW = "infocus.show";
-  var COMMAND_ID = "InFocus";
-
-  // Get the path of the extension
-  var infocusExtPath = ExtensionUtils.getModulePath(module);
-
-  var panel;
-  var panelHtml = require("text!infocus.html");
+  var INFOCUS_SHOW = "infocus.show",
+      COMMAND_ID = "InFocus",
+      // Get the path of the extension:
+      infocusExtPath = ExtensionUtils.getModulePath(module),
+      panel,
+      panelHtml = require("text!infocus.html");
 
   // Function for setting the paths for each channel.
   // This will go through each audio <source> tags,
   // and set their src attributes accordingly.
   function getChannelPath() {
-    for (var i = 0; i < channelsArray.length; i++) {
-      var soundPath = "sounds/infocus-" + channelsArray[i] + ".ogg";
-      var fullChannelPath = infocusExtPath + soundPath;
+    var i,
+        soundPath,
+        fullChannelPath;
+
+    for (i = 0; i < channelsArray.length; i++) {
+      soundPath = "sounds/infocus-" + channelsArray[i] + ".ogg";
+      fullChannelPath = infocusExtPath + soundPath;
+
       document.getElementById('sound-' + channelsArray[i] + '-src').setAttribute("src", fullChannelPath);
     }
   }
 
   function handle() {
-    if(panel.isVisible()) {
+    if (panel.isVisible()) {
       panel.hide();
       CommandManager.get(INFOCUS_SHOW);
     }
@@ -37,7 +41,7 @@ define(function(require, exports, module) {
     }
   }
 
-  AppInit.appReady(function() {
+  AppInit.appReady(function () {
     // Load the stylesheet:
     ExtensionUtils.loadStyleSheet(module, "style.css");
     // Register the name:
@@ -46,7 +50,7 @@ define(function(require, exports, module) {
     var menu = Menus.getMenu(Menus.AppMenuBar.NAVIGATE_MENU);
     menu.addMenuItem(INFOCUS_SHOW, "Ctrl-Alt-.");
     // Create the bottom panel:
-    panel = PanelManager.createBottomPanel(INFOCUS_SHOW, $(panelHtml),200);
+    panel = WorkspaceManager.createBottomPanel(INFOCUS_SHOW, $(panelHtml), 75);
 
     getChannelPath();
   });

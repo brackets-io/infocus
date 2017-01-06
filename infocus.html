@@ -82,8 +82,8 @@ var volSlider   = document.getElementById('infocus-volume-slider');
 function playSound(channel) {
   // Play the sounds by passing the sounds' names as arguments
   // eg. playSound('cafe')
-  channelSound = document.getElementById('infocus-sound-' + channel);
-  channelPlayBtn = document.getElementById('infocus-play-' + channel);
+  channelSound    = document.getElementById('infocus-sound-' + channel);
+  channelPlayBtn  = document.getElementById('infocus-play-' + channel);
 
   // Start playing the sounds
   if (channelSound.paused) {
@@ -92,8 +92,8 @@ function playSound(channel) {
     channelPlayBtn.className = "";
     channelPlayBtn.className = channel + "-pause";
   }
-  // Pause the sounds
   else {
+    // Pause the sounds
     channelSound.pause();
     // Remove *-pause CSS class, add *-play instead
     channelPlayBtn.className = "";
@@ -144,8 +144,7 @@ function mute() {
     muteButton.className = "";
     muteButton.className = "unmute-sound";
   }
-  // MUTE ON
-  else {
+  else { // MUTE ON
     for (var i = 0; i < soundsArray.length; i++) {
       soundsArray[i].muted = true;
     }

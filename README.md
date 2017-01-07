@@ -10,7 +10,7 @@ ___
 ![Snow](https://github.com/a-bakos/infocus/blob/master/icons/snow-on.png)
 ![City](https://github.com/a-bakos/infocus/blob/master/icons/city-on.png)
 ![Cafe](https://github.com/a-bakos/infocus/blob/master/icons/cafe-on.png)
-##### Brackets extension to help you focus while coding
+##### [Brackets](http://brackets.io/) extension to help you focus while coding
 _Inspired by [Noisli](https://www.noisli.com/) and [Relax](http://brunobord.github.io/relax/)_
 
 ---
@@ -30,7 +30,7 @@ that offers the option of being portable, but again, I don't do actual work
 inside it.
 
 So here's my minimalistic distillation of a similar tool in the form of an
-extension for my favourite editor. It lives where the work happens, therefore,
+extension for my [favourite editor](http://brackets.io/). It lives where the work happens, therefore,
 can be controlled conveniently. That also means you can use it on the go, or
 basically anywhere.
 
@@ -78,8 +78,9 @@ sources and the licences linked below. Also, all of the sounds have been
 slightly edited by me, e.g. they have been cut, made loopable, compressed and
 re-titled for the extension.
 
-###### The following sounds are the amazing field recordings of **Tim Kahn** aka [Corsica_S](https://www.freesound.org/people/Corsica_S/):
-License: _[CC-BY](https://creativecommons.org/licenses/by/3.0/)_
+The following sounds are the amazing field recordings of **Tim Kahn** aka [**Corsica_S**](https://www.freesound.org/people/Corsica_S/):
+
+_(License: [CC-BY](https://creativecommons.org/licenses/by/3.0/))_
 
 [**Botanical garden**](https://www.freesound.org/people/Corsica_S/sounds/265975/),
 [**Fire**](https://www.freesound.org/people/Corsica_S/sounds/253770/),
@@ -103,6 +104,7 @@ License: _[CC-BY](https://creativecommons.org/licenses/by/3.0/)_
 The used and modified icons originally come from [Flaticons.net](http://flaticons.net).
 
 ---
+
 #### Happy coding!
 
 [abakos](http://abakos.info) | 2017 Plymouth UK

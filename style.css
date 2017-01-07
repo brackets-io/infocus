@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+/**
+ * InFocus - Brackets extension
+ * https://github.com/a-bakos/infocus
+ */
+
 /* InFocus container. Does not include toolbar */
 .infocus-contents {
   margin: auto;

@@ -1,5 +1,6 @@
 ___
 # InFocus
+
 ![Dawn](https://github.com/a-bakos/infocus/blob/master/icons/dawn-on.png)
 ![Garden](https://github.com/a-bakos/infocus/blob/master/icons/garden-on.png)
 ![Summer night](https://github.com/a-bakos/infocus/blob/master/icons/night-on.png)
@@ -10,8 +11,12 @@ ___
 ![Snow](https://github.com/a-bakos/infocus/blob/master/icons/snow-on.png)
 ![City](https://github.com/a-bakos/infocus/blob/master/icons/city-on.png)
 ![Cafe](https://github.com/a-bakos/infocus/blob/master/icons/cafe-on.png)
+
 ##### [Brackets](http://brackets.io/) extension to help you focus while coding
+
 _Inspired by [Noisli](https://www.noisli.com/) and [Relax](http://brunobord.github.io/relax/)_
+
+##### Current version: v0.9.5
 
 ---
 
@@ -55,6 +60,12 @@ Just be aware, it may take longer to download, etc.
 
 ![InFocus](https://github.com/a-bakos/infocus/blob/master/infocus-screenshot-main.png)
 
+## Install
+
+1. `File` >> `Extension Manager` >> `Available` tab
+2. Search for `InFocus`
+3. Click on `Install`
+
 ## Usage
 
 Use the keyboard shortcut `CTRL` + `ALT` + `.` _(period)_ to toggle the panel.
@@ -68,7 +79,6 @@ You can play any number of sounds at once.
 Use the slider or the mute button to control the overall volume.
 
 ![InFocus](https://github.com/a-bakos/infocus/blob/master/infocus-screenshot-mute.png)
-
 
 ## Resources
 
@@ -104,6 +114,7 @@ _(License: [CC-BY](https://creativecommons.org/licenses/by/3.0/))_
 The used and modified icons originally come from [Flaticons.net](http://flaticons.net).
 
 ---
+##### License: [MIT](https://en.wikipedia.org/wiki/MIT_License)
 
 #### Happy coding!
 

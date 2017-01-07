@@ -1,3 +1,8 @@
+/**
+ * InFocus - Brackets extension
+ * https://github.com/a-bakos/infocus
+ */
+
 define(function (require, exports, module) {
   "use strict";
 

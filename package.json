@@ -3,7 +3,7 @@
     "title": "InFocus",
     "description": "Keep yourself focused during coding by playing some background noises. Extension inspired by Noisli.",
     "homepage": "https://github.com/a-bakos/infocus",
-    "version": "0.9.5",
+    "version": "0.9.6",
     "author": "Attila Bakos",
     "license": "MIT",
     "keywords": ["focus", "audio", "performance", "productivity"],

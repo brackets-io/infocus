@@ -121,6 +121,16 @@ function setVolume() {
     muteButton.className = "mute-sound";
   }
   else {
+    for (var i = 0; i < soundsArray.length; i++) {
+    // Wherever you click along the track of the volSlider that is bigger than
+    // (position) zero, this loop will acknowledge that the volume can not be
+    // muted at the same time...
+    // WHAT, WHY?
+    // Because there was an issue [until v0.9.5], when you clicked ON the mute
+    // button and THEN clicked anywhere on the slider track, it remained silent
+    // UNTIL you clicked the mute button [OFF] again.
+      soundsArray[i].muted = false;
+    }
     // Otherwise apply the "loud" icon
     muteButton.className = "";
     muteButton.className = "unmute-sound";

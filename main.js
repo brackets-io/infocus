@@ -9,15 +9,16 @@ define(function (require, exports, module) {
   var CommandManager    = brackets.getModule("command/CommandManager"),
       Menus             = brackets.getModule("command/Menus"),
       WorkspaceManager  = brackets.getModule("view/WorkspaceManager"),
+      //PanelManager = brackets.getModule("view/PanelManager"),
       ExtensionUtils    = brackets.getModule("utils/ExtensionUtils"),
       AppInit           = brackets.getModule("utils/AppInit");
 
-  var INFOCUS_SHOW = "infocus.show",
-      COMMAND_ID = "InFocus",
+  var INFOCUS_SHOW      = "infocus.show",
+      COMMAND_ID        = "InFocus",
       // Get the path of the extension:
-      infocusExtPath = ExtensionUtils.getModulePath(module),
+      infocusExtPath    = ExtensionUtils.getModulePath(module),
       panel,
-      panelHtml = require("text!infocus.html");
+      panelHtml         = require("text!infocus.html");
 
   // Function for setting the paths for each channel.
   // This will go through each audio <source> tags,
@@ -38,11 +39,11 @@ define(function (require, exports, module) {
   function handle() {
     if (panel.isVisible()) {
       panel.hide();
-      CommandManager.get(INFOCUS_SHOW);
+      CommandManager.get(INFOCUS_SHOW).setChecked(false);
     }
     else {
       panel.show();
-      CommandManager.get(INFOCUS_SHOW);
+      CommandManager.get(INFOCUS_SHOW).setChecked(true);
     }
   }
 
@@ -56,6 +57,11 @@ define(function (require, exports, module) {
     menu.addMenuItem(INFOCUS_SHOW, "Ctrl-Alt-.");
     // Create the bottom panel:
     panel = WorkspaceManager.createBottomPanel(INFOCUS_SHOW, $(panelHtml), 75);
+
+    // Close the panel by clicking on X
+    $('#infocus-panel .close').click(function () {
+      handle();
+    });
 
     getChannelPath();
   });

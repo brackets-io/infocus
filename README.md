@@ -16,7 +16,7 @@ ___
 
 _Inspired by [Noisli](https://www.noisli.com/) and [Relax](http://brunobord.github.io/relax/)_
 
-##### Current version: v0.9.6
+##### Current version: v0.9.7
 
 ---
 

@@ -62,9 +62,7 @@ Just be aware, it may take longer to download, etc.
 
 ## Install
 
-1. `File` >> `Extension Manager` >> `Available` tab
-2. Search for `InFocus`
-3. Click on `Install`
+Currently only manual installation is possible, because of the extensions registry's upload limit.
 
 ## Usage
 

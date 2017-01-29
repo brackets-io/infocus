@@ -50,7 +50,7 @@ favourites by the way).
 
 ![InFocus](https://github.com/a-bakos/infocus/blob/master/infocus-screenshot-main.png)
 
-## Install
+## Install _(please read through)_
 
 Currently, the installation requires **two** steps. The first is the regular
 procedure, same with most of the extensions. The second step requires a small

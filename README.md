@@ -53,7 +53,7 @@ favourites by the way).
 ## Install
 
 Currently, the installation requires **two** steps. The first is the regular
-procedure, same with most of the extensions. The second step requires a tiny
+procedure, same with most of the extensions. The second step requires a small
 manual action. Below, I explain what and **why**.
 
 **1.** Go to the `Extension Manager`. Find `InFocus` and click `Install`.
@@ -136,7 +136,7 @@ _(License: [CC-BY](https://creativecommons.org/licenses/by/3.0/))_
 [**Frog pond**](https://www.freesound.org/people/Corsica_S/sounds/153031/)
 
 **Summer night**
-(this sound is mix I made of two recordings):
+(this sound is a mix I made of two recordings):
 
  - [[1]](https://www.freesound.org/people/Corsica_S/sounds/184268/) _[CC-BY](https://creativecommons.org/licenses/by/3.0/)_ by [Corsica_S](https://www.freesound.org/people/Corsica_S/) 
  - [[2]](https://www.freesound.org/people/johnaudiotech/sounds/347049/) _CC0_ by johnaudiotech

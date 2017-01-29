@@ -89,7 +89,7 @@
   .water-play   { background: url('icons/water-on.png');  }
   .water-pause  { background: url('icons/water-off.png'); }
 
-/* Snow falling sounds */
+/* Snowfall sounds */
 #infocus-play-snow:hover {
   background: url('icons/snow-hover.png');
   background-size: 100%;
